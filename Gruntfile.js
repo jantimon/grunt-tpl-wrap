@@ -35,18 +35,19 @@ module.exports = function (grunt) {
     'tpl-wrap': {
       'default-options': {
         options: {
-          template: 'test/fixtures/template1.tpl'
+          template: 'test/fixtures/template-default.tpl'
         },
         files: {
           'tmp/default-options': ['test/fixtures/*.md', 'test/fixtures/*.txt']
         }
       },
+
       prepare: {
         options: {
-          template: 'test/fixtures/template2.tpl',
-          prepare: function(data) {
+          template: 'test/fixtures/template-prepare.tpl',
+          prepare: function (data) {
             // Add a list of all txt files
-            data.txtFiles = data.src.filter(function(fileName){
+            data.txtFiles = data.src.filter(function (fileName) {
               return fileName.match(/\.txt$/);
             });
           }
@@ -55,9 +56,10 @@ module.exports = function (grunt) {
           'tmp/prepare': ['test/fixtures/*.md', 'test/fixtures/*.txt']
         }
       },
+
       expand: {
         options: {
-          template: 'test/fixtures/template3.tpl'
+          template: 'test/fixtures/template-expand.tpl'
         },
         files: [
           {
@@ -69,7 +71,18 @@ module.exports = function (grunt) {
             extDot: 'first'
           }
         ]
+      },
+
+      'custom-data': {
+        options: {
+          template: 'test/fixtures/template-custom-data.tpl',
+          data: { customDataDemo: 'This is just a demo' }
+        },
+        files: {
+          'tmp/custom-data': ['test/fixtures/*.txt']
+        }
       }
+
     },
 
     // Unit tests.

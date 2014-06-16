@@ -1,0 +1,14 @@
+This file wraps the following files:
+test/fixtures/demo1.txt
+test/fixtures/demo2.txt
+
+Sometimes you need only the file titles:
+demo1, demo2
+
+Merged file contents:
+Demo 1 Text File
+Demo 2 Text File
+
+
+Custom data:
+This is just a demo

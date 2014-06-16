@@ -3,24 +3,24 @@
 var grunt = require('grunt');
 
 /*
-  ======== A Handy Little Nodeunit Reference ========
-  https://github.com/caolan/nodeunit
+ ======== A Handy Little Nodeunit Reference ========
+ https://github.com/caolan/nodeunit
 
-  Test methods:
-    test.expect(numAssertions)
-    test.done()
-  Test assertions:
-    test.ok(value, [message])
-    test.equal(actual, expected, [message])
-    test.notEqual(actual, expected, [message])
-    test.deepEqual(actual, expected, [message])
-    test.notDeepEqual(actual, expected, [message])
-    test.strictEqual(actual, expected, [message])
-    test.notStrictEqual(actual, expected, [message])
-    test.throws(block, [error], [message])
-    test.doesNotThrow(block, [error], [message])
-    test.ifError(value)
-*/
+ Test methods:
+ test.expect(numAssertions)
+ test.done()
+ Test assertions:
+ test.ok(value, [message])
+ test.equal(actual, expected, [message])
+ test.notEqual(actual, expected, [message])
+ test.deepEqual(actual, expected, [message])
+ test.notDeepEqual(actual, expected, [message])
+ test.strictEqual(actual, expected, [message])
+ test.notStrictEqual(actual, expected, [message])
+ test.throws(block, [error], [message])
+ test.doesNotThrow(block, [error], [message])
+ test.ifError(value)
+ */
 
 exports.tpl_wrap = {
   default_options: function (test) {
@@ -32,7 +32,7 @@ exports.tpl_wrap = {
 
     test.done();
   },
-  custom_options: function (test) {
+  customOptions: function (test) {
     test.expect(1);
 
     var actual = grunt.file.read('tmp/prepare');
@@ -56,6 +56,15 @@ exports.tpl_wrap = {
     var actual = grunt.file.read('tmp/demo2.expand.html');
     var expected = grunt.file.read('test/expected/demo2.expand.html');
     test.equal(actual, expected, 'should wrap each file if the expand flag is set to true. - file 2');
+
+    test.done();
+  },
+  customData: function (test) {
+    test.expect(1);
+
+    var actual = grunt.file.read('tmp/custom-data');
+    var expected = grunt.file.read('test/expected/custom-data');
+    test.equal(actual, expected, 'should allow to specify custom values using an object');
 
     test.done();
   }

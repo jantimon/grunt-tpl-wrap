@@ -19,7 +19,9 @@ module.exports = function (grunt) {
     var options = this.options({
       template: null,
       prepare: function (/* data */) {
-      }
+      },
+      'data': {},
+      'delimiters': 'config' // Default delimiters.
     });
 
     // Read the template file once
@@ -38,11 +40,19 @@ module.exports = function (grunt) {
         }
       });
 
+      // From https://github.com/mathiasbynens/grunt-template/blob/master/
+      // Allow to provide custom template data using an object or a function
       var templateOptions = {
         'data': (typeof options.data === 'function' ?
           options.data() :
           options.data) || {}
       };
+
+      if (options.delimiters) {
+        templateOptions.delimiters = typeof options.delimiters === 'function' ?
+        options.delimiters() :
+        options.delimiters;
+      }
 
       // Pass the file content
       var fileContents = src.map(function (filePath) {
