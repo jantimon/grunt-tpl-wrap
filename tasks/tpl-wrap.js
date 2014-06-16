@@ -13,7 +13,7 @@ module.exports = function (grunt) {
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
-  grunt.registerMultiTask('tpl_wrap', 'A grunt plugin to wrap file contents with a tpl template', function () {
+  grunt.registerMultiTask('tpl-wrap', 'A grunt plugin to wrap file contents with a tpl template', function () {
 
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({

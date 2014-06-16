@@ -32,16 +32,16 @@ module.exports = function (grunt) {
     },
 
     // Configuration to be run (and then tested).
-    tpl_wrap: {
-      default_options: {
+    'tpl-wrap': {
+      'default-options': {
         options: {
           template: 'test/fixtures/template1.tpl'
         },
         files: {
-          'tmp/default_options': ['test/fixtures/*.md', 'test/fixtures/*.txt']
+          'tmp/default-options': ['test/fixtures/*.md', 'test/fixtures/*.txt']
         }
       },
-      custom_options: {
+      prepare: {
         options: {
           template: 'test/fixtures/template2.tpl',
           prepare: function(data) {
@@ -52,7 +52,7 @@ module.exports = function (grunt) {
           }
         },
         files: {
-          'tmp/custom_options': ['test/fixtures/*.md', 'test/fixtures/*.txt']
+          'tmp/prepare': ['test/fixtures/*.md', 'test/fixtures/*.txt']
         }
       },
       expand: {
@@ -65,7 +65,7 @@ module.exports = function (grunt) {
             cwd: 'test/fixtures/',
             src: ['*.txt'],
             dest: 'tmp/',
-            ext: '.html',
+            ext: '.expand.html',
             extDot: 'first'
           }
         ]
@@ -74,7 +74,7 @@ module.exports = function (grunt) {
 
     // Unit tests.
     nodeunit: {
-      tests: ['test/*_test.js']
+      tests: ['test/*.test.js']
     }
 
   });
@@ -84,7 +84,7 @@ module.exports = function (grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'tpl_wrap', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'tpl-wrap', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);

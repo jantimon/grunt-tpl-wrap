@@ -23,15 +23,11 @@ var grunt = require('grunt');
 */
 
 exports.tpl_wrap = {
-  setUp: function (done) {
-    // setup here if necessary
-    done();
-  },
   default_options: function (test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/default_options');
-    var expected = grunt.file.read('test/expected/default_options');
+    var actual = grunt.file.read('tmp/default-options');
+    var expected = grunt.file.read('test/expected/default-options');
     test.equal(actual, expected, 'should wrap all files into one file.');
 
     test.done();
@@ -39,8 +35,8 @@ exports.tpl_wrap = {
   custom_options: function (test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/custom_options');
-    var expected = grunt.file.read('test/expected/custom_options');
+    var actual = grunt.file.read('tmp/prepare');
+    var expected = grunt.file.read('test/expected/prepare');
     test.equal(actual, expected, 'should allow to extend the data with custom values.');
 
     test.done();
@@ -48,8 +44,8 @@ exports.tpl_wrap = {
   expandFiles1: function (test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/demo1.html');
-    var expected = grunt.file.read('test/expected/demo1.html');
+    var actual = grunt.file.read('tmp/demo1.expand.html');
+    var expected = grunt.file.read('test/expected/demo1.expand.html');
     test.equal(actual, expected, 'should wrap each file if the expand flag is set to true. - file 1');
 
     test.done();
@@ -57,8 +53,8 @@ exports.tpl_wrap = {
   expandFiles2: function (test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/demo2.html');
-    var expected = grunt.file.read('test/expected/demo2.html');
+    var actual = grunt.file.read('tmp/demo2.expand.html');
+    var expected = grunt.file.read('test/expected/demo2.expand.html');
     test.equal(actual, expected, 'should wrap each file if the expand flag is set to true. - file 2');
 
     test.done();
