@@ -150,7 +150,7 @@ do that in the optional `prepare` function.
 
 ```js
 grunt.initConfig({
-  tpl_wrap: {
+  tpl-wrap: {
     options: {
       // Task-specific options go here.
       template: 'path/to/wrapper-template.tpl',
