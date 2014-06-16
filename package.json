@@ -5,7 +5,8 @@
   "homepage": "https://github.com/jantimon/grunt-tpl-wrap",
   "repository": "https://github.com/jantimon/grunt-tpl-wrap.git",
   "author": {
-    "name": "Jan Nicklas"
+    "name": "Jan Nicklas",
+    "email": "j.nicklas@me.com"
   },
   "keywords": [
     "gruntplugin"
