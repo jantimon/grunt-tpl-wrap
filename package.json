@@ -1,6 +1,6 @@
 {
   "name": "grunt-tpl-wrap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A grunt plugin to wrap file contents with a tpl template",
   "homepage": "https://github.com/jantimon/grunt-tpl-wrap",
   "repository": "https://github.com/jantimon/grunt-tpl-wrap.git",
