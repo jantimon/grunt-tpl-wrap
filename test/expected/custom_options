@@ -1,0 +1,18 @@
+This file wraps the following files:
+test/fixtures/demo3.md
+test/fixtures/demo1.txt
+test/fixtures/demo2.txt
+
+Sometimes you need only the file titles:
+demo3, demo1, demo2
+
+For this tests the prepare callback in the Gruntfile.js 
+adds a list of txt files:
+test/fixtures/demo1.txt
+test/fixtures/demo2.txt
+
+Merged file contents:
+*Demo 3 Markdown File*
+Demo 1 Text File
+Demo 2 Text File
+
