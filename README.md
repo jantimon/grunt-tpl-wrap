@@ -26,7 +26,7 @@ Concat all files or write all filenames into one file:
 
 ```js
 grunt.initConfig({
-  tpl_wrap: {
+  'tpl-wrap': {
     options: {
       // Task-specific options go here.
       template: 'path/to/wrapper-template.tpl'
@@ -95,7 +95,7 @@ Without the custom `prepare` callback there are six default variables available 
 
 ```js
 grunt.initConfig({
-  tpl_wrap: {
+  'tpl-wrap': {
     options: {
       // Task-specific options go here.
       template: 'path/to/wrapper-template.tpl'
@@ -121,7 +121,7 @@ In this case there are four template variables available:
 
 ```js
 grunt.initConfig({
-  tpl_wrap: {
+  'tpl-wrap': {
     options: {
       // Task-specific options go here.
       template: 'path/to/wrapper-template.tpl'
