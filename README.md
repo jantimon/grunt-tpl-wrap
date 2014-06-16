@@ -1,4 +1,4 @@
-# grunt-tpl-wrap [![Build status](https://travis-ci.org/jantimon/grunt-tpl-wrap.svg?branch=master)]
+# grunt-tpl-wrap [![Build status](https://travis-ci.org/jantimon/grunt-tpl-wrap.svg?branch=master)](https://travis-ci.org/jantimon/grunt-tpl-wrap)
 
 > A grunt plugin to wrap file contents with a tpl template
 
