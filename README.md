@@ -41,6 +41,14 @@ grunt.initConfig({
 })
 ```
 
+Your `wrapper-template.tpl`
+```
+  Some conent you want to place before the file content
+  <%= fileContent %>
+  Some conent you want to place after the file content
+```
+
+
 ### Options
 
 The `options` property accepts the following options:
